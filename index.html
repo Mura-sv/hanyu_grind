@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanzi Hero Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="total-score-display">Total Score: <span id="total-score">0</span></div>
+            <h1 class="title">Hanzi Hero</h1>
+            <p class="subtitle">Practice HSK 1 Chinese</p>
+            <button id="start-btn" class="btn btn-primary">Start Game</button>
+            <button id="map-btn" class="btn">Map</button>
+            <button id="settings-btn" class="btn">Settings</button>
+        </div>
+        
+        <!-- Map Screen -->
+        <div id="map-screen" class="screen">
+             <h2 class="settings-title">Your Progress</h2>
+             <div class="map-progress-container">
+                 <div id="map-progress-bar"></div>
+                 <div class="map-start">0</div>
+                 <div class="map-end">krasapchik</div>
+             </div>
+             <p class="subtitle">Your Score: <span id="map-score">0</span> / 1000</p>
+             <button id="map-back-btn" class="btn">Back to Menu</button>
+        </div>
+
+
+        <!-- Settings Screen -->
+        <div id="settings-screen" class="screen">
+            <h2 class="settings-title">Settings</h2>
+            <div class="setting-item">
+                <label for="num-questions">Questions:</label>
+                <select id="num-questions" class="select-box">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label>Question Types:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="include-hanzi" checked> <label for="include-hanzi">Hanzi</label>
+                    <input type="checkbox" id="include-pinyin" checked> <label for="include-pinyin">Pinyin</label>
+                    <input type="checkbox" id="include-grammar" checked> <label for="include-grammar">Grammar</label>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label for="timer-difficulty">Timer:</label>
+                <select id="timer-difficulty" class="select-box">
+                    <option value="easy">Easy (7s)</option>
+                    <option value="medium" selected>Medium (5s)</option>
+                    <option value="difficult">Difficult (3s)</option>
+                </select>
+            </div>
+            <button id="settings-back-btn" class="btn">Back to Menu</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div id="timer"></div>
+            </div>
+            <div id="question-container">
+                <p id="question-type-label"></p>
+                <div id="question"></div>
+                <input type="text" id="answer-input" placeholder="Answer in English or Chinese...">
+                <div id="feedback"></div>
+                <button id="submit-btn" class="btn">Submit</button>
+                <button id="stop-game-btn" class="btn btn-danger">Stop Game</button>
+            </div>
+        </div>
+
+        <!-- Score Screen -->
+        <div id="score-screen" class="screen">
+            <h2 class="score-title">Game Over!</h2>
+            <p class="final-score-text">Your score:</p>
+            <p class="final-score-display"><span id="final-score"></span> / <span id="total-questions-summary"></span></p>
+            <div id="results-container">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+            <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
